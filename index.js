@@ -3,11 +3,8 @@ const mongoose = require('mongoose');
 
 const typeDefs = require('./graphgql/typeDefs');
 const resolvers = require('./graphgql/resolvers');
-const {MONGODB} = require('./config.js'); // putting in brackets deconstructs the returned stuff
-
-
-
-
+const {MONGODB} = require('./config.js'); 
+// putting in brackets deconstructs the returned stuff
 
 
 const server = new ApolloServer({
