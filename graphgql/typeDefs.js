@@ -30,5 +30,6 @@ module.exports = gql`
     # // making a change in database
     type Mutation{
         register(registerInput: RegisterInput): User!
+        login(username: String!, password: String!): User!
     }
 `;
