@@ -6,6 +6,21 @@ module.exports = gql`
         body: String!
         createdAt: String!
         username: String!
+        comments:[Comment]! # must contain at least 1 Comment
+        likes:[Like]!
+    }
+
+    type Comment{
+        id: ID!
+        createdAt: String!
+        username: String!
+        body: String!
+    }
+
+    type Like{
+        id: ID
+        createdAt: String!
+        username: String!
     }
     
     # // these files must be returned, but the user might opt to not fill them in.
@@ -34,5 +49,8 @@ module.exports = gql`
         login(username: String!, password: String!): User!
         createPost(body: String!):Post!
         deletePost(postId:ID!):String!
+        createComment(postId: String!, body: String!): Post!
+        deleteComment(postId: ID!, commentId:ID!): Post!
+        likePost(postId:ID!):Post!
     }
 `;
